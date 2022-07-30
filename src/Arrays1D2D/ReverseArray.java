@@ -13,7 +13,7 @@ public class ReverseArray {
     }
     return arr;// 1
   }
-  // TC : 1+1+n/2+n/2+3n/2 = 2+ 5*n/2 = (5/2)*n = O(n)
+  // TC : 1+1+1+n/2+n/2+3n/2 = 3 + 5*n/2 = (5/2)*n = O(n)
   // SC : 3 = O(1)
 
   public static void main(String[] args) {
