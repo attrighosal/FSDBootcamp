@@ -25,20 +25,24 @@ public class DoublyLinkedList {
         head.next = newNode;
     }
 
-    public void addEnd(int value) {
+    public Node addEnd(int value) {
 
         Node newNode = new Node(value);
         newNode.next = tail;
         newNode.prev = tail.prev;
         tail.prev.next = newNode;
         tail.prev = newNode;
+        return newNode;
     }
 
-    public void deleteBegin() {
+    public Node deleteBegin() {
         if (!isEmpty()) {
+            Node node = head.next;
             head.next = head.next.next;
             head.next.prev = head;
+            return node;
         }
+        return null;
     }
 
     public void deleteEnd() {
@@ -46,6 +50,11 @@ public class DoublyLinkedList {
             tail.prev = tail.prev.prev;
             tail.prev.next = tail;
         }
+    }
+
+    public void deleteNode(Node node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
     }
 
     public void display() {
