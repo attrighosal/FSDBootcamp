@@ -18,6 +18,8 @@ public class SelectionSort {
                 }
             }
 
+            // if (min==target) count++;
+
             // swap the minimum element with the first element of the unsorted array
             int temp = arr[i];
             arr[i] = arr[minIndex];
