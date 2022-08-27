@@ -8,11 +8,17 @@ public class ArrayBasic {
         // int[] a = new int[5];
         int[] a = new int[100]; // Created an Array of size 5
 
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(a)); // [0,0,0,0,......0]
 
         // Assigning Values to the array using for loop
         for (int i=0; i<100; i++) {
-            a[i] = i+1; // 0->1
+            a[i] = i+1; //
+        }
+
+        System.out.println(Arrays.toString(a)); // [1,2,3,4,5,....100]
+
+        for (int i=0; i<100; i++) {
+            System.out.println(a[i]);
         }
 
         // Assigning Values using while loop
@@ -22,6 +28,6 @@ public class ArrayBasic {
             i++;
         }
 
-        System.out.println(Arrays.toString(a));
+
     }
 }
