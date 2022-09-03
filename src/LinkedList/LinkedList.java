@@ -63,6 +63,17 @@ public class LinkedList {
     }
     // TC: O(n) = n/2 = (1/2)*n^1 = O(n)
 
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public int getBegin() {
+        if (isEmpty()) {
+            return -1;
+        }
+        return head.value;
+    }
+
     public void display() {
         System.out.print("LinkedList : ");
         Node curr = head; // 1
