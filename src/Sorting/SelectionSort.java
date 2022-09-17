@@ -24,6 +24,8 @@ public class SelectionSort {
             int temp = arr[i];
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
+
+            System.out.println(Arrays.toString(arr));
         }
 
         return arr;
@@ -35,6 +37,6 @@ public class SelectionSort {
 
         int[] sortedArr = selectionSort(arr);
 
-        System.out.println(Arrays.toString(sortedArr));
+        System.out.println("Selection Sorted Array : "+Arrays.toString(sortedArr));
     }
 }
