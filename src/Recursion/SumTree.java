@@ -15,9 +15,37 @@ public class SumTree {
         System.out.println(Arrays.toString(array));
     }
 
+    public static void recursiveOptimisedPrintSumTree(int[] array, int length) {
+        // Recursive calls
+        if (length>1) {
+            for (int i=0; i<length-1; i++) {
+                array[i] += array[i+1];
+            }
+            recursiveOptimisedPrintSumTree(array, length-1);
+            for (int i=length-2; i>=0; i--) {
+                array[i] -= array[i+1];
+            }
+        }
+
+        // Printing the array
+        System.out.print("[");
+        for (int i=0; i<length; i++) {
+            System.out.print(array[i]);
+            if (i<length-1) {
+                System.out.print(",");
+            }
+        }
+        System.out.print("]\n");
+    }
+
+    public static void optimisedPrintSumTree(int[] array) {
+        recursiveOptimisedPrintSumTree(array, array.length);
+    }
+
     public static void main(String[] args) {
         int[] array = new int[] {1,2,3,4,5};
-        printSumTree(array);
+//        printSumTree(array);
+        optimisedPrintSumTree(array);
     }
 }
 
