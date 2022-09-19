@@ -46,6 +46,22 @@ public class LinkedList {
         }
     }
     // TC: O(n) = 1*n^1 + (-1)*n^0 = 1*n^1 = n^1 = n
+
+    public void deleteAtIndex(int index) {
+        if (index==0) {
+            head = head.next;
+            return;
+        }
+        int count=0;
+        Node curr = head;
+        while(curr!=null && count<index-1) {
+            curr = curr.next;
+            count++;
+        }
+        if (curr != null && curr.next != null) {
+            curr.next = curr.next.next;
+        }
+    }
     
     public void findMid() {
         if (head==null) {
